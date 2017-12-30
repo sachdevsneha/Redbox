@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}
+<title>Thank you</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Thank you</h1>
+    {% with order_id=order.id %}
+        <p>Your order has been successfully completed. Your order number is <strong>{{ order_id }}</strong>.</p>
+    {% endwith %}
+{% endblock %}

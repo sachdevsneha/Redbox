@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>{{title}}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+                    {% if movie %}
+                        {% if movie.image %}
+                            <img src="{{ movie.image.url }}" class="img-responsive">
+                        {% endif %}
+                    <h3>Directed by: {{ movie.Director }}</h3>
+        </div>
+        <div class="col-sm-8 col-md-9">
+                    <h5><strong>IMDB Rating</strong>:{{ movie.IMDB_rating }} </h5>
+                    <h5><strong>Genre</strong>: {{ movie.Genre }}</h5>
+                    <h5><strong>Plot:</strong></h5>
+                    <p>{{ movie.description }}</p>
+<div class="cb"><br /><br /></div>
+           <form action="{% url 'cart:cart_add' movie.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
+               {% endif %}
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 col-md-3">
+            {% if game %}
+            {% if game.image %}
+            <img src="{{ game.image.url }}" class="img-responsive">
+            {% endif %}
+        </div>
+        <div class="col-sm-8 col-md-9">
+                    <h5><strong>Genre</strong>: {{ game.Genre }}</h5>
+                    <h5><strong>Plot:</strong></h5>
+                    <p>{{ game.description }}</p>
+            <form action="{% url 'cart:cart_add' game.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

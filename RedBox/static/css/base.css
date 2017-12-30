@@ -1,0 +1,57 @@
+body {
+    background-color: Azure;
+    border: 0px;
+    padding: 0px;
+}
+
+#header {
+    float:left;
+    margin-left: 20px;
+}
+
+#subheader {
+    width: 100%;
+    background-color:hotpink;
+    overflow: hidden;
+}
+
+#subheader .cart {
+    float: right;
+    margin-right:20px;
+    margin-top: 10px;
+
+}
+
+#subheader.cart a {
+    color: white;
+}
+
+.btn {
+    background-color: Azure;
+    color: hotpink;
+    border: 0px;
+
+   }
+
+.btn:hover {
+    background-color: Azure;
+    color: hotpink;
+}
+
+h1, h2 {
+    color: white;
+}
+
+.product h1 {
+color:hotpink;
+}
+
+
+input[type=submit] {
+    background-color: hotpink;
+    color: white;
+}
+
+.order-info {
+float:right;
+    }
